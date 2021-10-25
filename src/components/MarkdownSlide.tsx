@@ -1,14 +1,17 @@
-import MD from "react-markdown";
-import { Highlighter } from "./Highlighter";
+import MD from 'react-markdown';
+import { Highlighter } from './Highlighter';
+import { Slide } from './Slide';
 
 interface Props {
   children: string;
 }
 
-export const MarkdownSlide = ({ children }: Props) => {
+export const MarkdownSlide = ({ children, ...props }: Props) => {
   return (
-    <section data-auto-animate>
-      <MD className="markdown-output" components={{ code: Highlighter }}>{children}</MD>
-    </section>
+    <Slide {...props}>
+      <MD className="markdown-output" components={{ code: Highlighter }}>
+        {children}
+      </MD>
+    </Slide>
   );
 };

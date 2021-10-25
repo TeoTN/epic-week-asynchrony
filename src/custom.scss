@@ -1,0 +1,42 @@
+/* CUSTOM STYLES */
+
+.circle {
+  position: relative;
+  display: flex;
+  background-color: $calypso;
+  border-radius: 64px;
+  width: 128px;
+  height: 128px;
+  align-items: center;
+  justify-content: center;
+  z-index: 900;
+
+  &.placeholder {
+    height: 16px;
+    border-radius: 0;
+  }
+
+  & > img {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+.circle::before {
+  position: absolute;
+  content: "";
+  display: block;
+  background-color: $calypso;
+  height: 16px;
+  width: 34px;
+  left: -26%;
+}
+
+.promise-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  margin: 32px 0;
+  align-items: center;
+}

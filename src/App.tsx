@@ -1,27 +1,20 @@
-import { MarkdownSlide, Slides, TitlePage } from "./components";
-
-const markdown = `
-# Lorem ipsum
-
----
-
-- Dolor sit amet
-- consectetur adipiscunt
-- elit lol
-
-\`\`\`js
-  const x = 5; // Show some code
-  // to your audience
-\`\`\`
-`;
+import { SlidesDeck, TitlePage } from './components';
+import { Agenda, Step1, Step2, Step3 } from './slides';
 
 export const App = () => {
   return (
     <div className="reveal">
-      <Slides>
-        <TitlePage title="Asynchrony" subtitle="Between now and then" author="Piotr Staniów" />
-        <MarkdownSlide>{markdown}</MarkdownSlide>
-      </Slides>
+      <SlidesDeck>
+        <TitlePage
+          title="Asynchrony"
+          subtitle="Between now and then"
+          author="Piotr Staniów"
+        />
+        <Agenda />
+        <Step1 />
+        <Step2 />
+        <Step3 />
+      </SlidesDeck>
     </div>
   );
 };

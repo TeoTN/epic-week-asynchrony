@@ -4,7 +4,9 @@
   "description": "Asynchrony - Between Now and Then",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html",
+    "lint:prettier": "prettier --write .",
+    "clean": "rm -rf .parcel-cache dist"
   },
   "author": "Piotr Staniów",
   "license": "ISC",
@@ -16,6 +18,7 @@
     "reveal.js": "4.1.3"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0",
     "@types/react": "17.0.30",
     "@types/react-dom": "17.0.9",
     "@types/react-syntax-highlighter": "13.5.2",
