@@ -1,4 +1,4 @@
-import { MarkdownSlide } from '../../../components';
+import { Markdown, Slide } from '../../../components';
 
 const body = `
 ### Callbacks
@@ -13,4 +13,8 @@ const body = `
 ~~~
 `;
 
-export const CallbacksExample = () => <MarkdownSlide>{body}</MarkdownSlide>;
+export const CallbacksExample = () => (
+  <Slide>
+    <Markdown>{body}</Markdown>
+  </Slide>
+);

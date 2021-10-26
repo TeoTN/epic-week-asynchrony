@@ -3,17 +3,19 @@ import { Markdown, Slide, SlideTitle } from "../../../components";
 
 const pros = `
 #### Pros
-* The simplest API - no wrappers 
+* Easier to track order of execution
+* Always asynchronous (microtask)
+* Error handling in the API
 `;
 const cons = `
 #### Cons
-* Hard to track flow of execution
-* Testing may require mocking other callbacks
+* Don't really solve the callback hell
+* Action is started immediately
 `;
 
-export const CallbacksOutro = () => (
+export const PromisesOutro = () => (
   <Slide>
-    <SlideTitle>Callbacks</SlideTitle>
+    <SlideTitle>Promises</SlideTitle>
     <TwoColumns
       left={<Markdown>{pros}</Markdown>}
       right={<Markdown>{cons}</Markdown>}

@@ -1,4 +1,4 @@
-import { MarkdownSlide } from '../../components';
+import { Markdown, Slide } from '../../components';
 
 const body = `
 ### JavaScript programming language
@@ -9,5 +9,7 @@ const body = `
 `;
 
 export const JavaScriptCharacteristics = () => (
-  <MarkdownSlide>{body}</MarkdownSlide>
+  <Slide>
+    <Markdown>{body}</Markdown>
+  </Slide>
 );

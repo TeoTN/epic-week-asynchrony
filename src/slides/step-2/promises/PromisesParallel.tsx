@@ -32,7 +32,7 @@ const Timeline = ({ children }: PropsWithChildren<{}>) => (
 export const PromisesParallel = () => {
   return (
     <Slide autoAnimate={false}>
-      <SlideTitle>Promises</SlideTitle>
+      <SlideTitle subtitle="Mental model">Promises</SlideTitle>
       <div>
         <Timeline>
           <Circle index={0}>

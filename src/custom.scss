@@ -5,8 +5,8 @@
   display: flex;
   background-color: $calypso;
   border-radius: 64px;
-  width: 128px;
-  height: 128px;
+  width: 160px;
+  height: 160px;
   align-items: center;
   justify-content: center;
   z-index: 900;
@@ -28,8 +28,8 @@
   display: block;
   background-color: $calypso;
   height: 16px;
-  width: 34px;
-  left: -26%;
+  width: 40px;
+  left: -25%;
 }
 
 .promise-timeline {
@@ -39,4 +39,19 @@
   gap: 32px;
   margin: 32px 0;
   align-items: center;
+}
+
+.two-columns {
+  display: flex;
+  font-size: .8em;
+  & > .left {
+    flex: 1;
+  }
+  & > .right {
+    flex: 1;
+  }
+}
+
+.reveal pre {
+  box-shadow: none;
 }

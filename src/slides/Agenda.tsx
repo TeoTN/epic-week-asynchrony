@@ -1,4 +1,4 @@
-import { MarkdownSlide } from '../components';
+import { Markdown, Slide } from '../components';
 
 const content = `
 ### Agenda
@@ -9,4 +9,8 @@ const content = `
 * How does asynchrony work in the browser?
 `;
 
-export const Agenda = () => <MarkdownSlide>{content}</MarkdownSlide>;
+export const Agenda = () => (
+  <Slide>
+    <Markdown>{content}</Markdown>
+  </Slide>
+);

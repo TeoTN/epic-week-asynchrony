@@ -1,4 +1,4 @@
-import { MarkdownSlide } from '../../components';
+import { Markdown, Slide } from '../../components';
 
 const body = `
 ## Asynchronous APIs
@@ -12,4 +12,8 @@ const body = `
 * Communicating Sequential Processes (CSP)
 `;
 
-export const AsyncAPI = () => <MarkdownSlide>{body}</MarkdownSlide>;
+export const AsyncAPI = () => (
+  <Slide>
+    <Markdown>{body}</Markdown>
+  </Slide>
+);
