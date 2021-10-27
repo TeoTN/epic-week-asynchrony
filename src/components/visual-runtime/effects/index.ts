@@ -5,11 +5,11 @@ import { NextLineEffect } from './push-line';
 import { StackFrameEffect } from './push-stack';
 import { TaskEffect } from './task';
 import { RepeatEffect } from './repeat';
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { delay } from './delay';
+import { MicroTaskEffect } from './microtask';
 
 export type {
   TaskEffect,
+  MicroTaskEffect,
   ApiCallEffect,
   StackFrameEffect,
   NextLineEffect,
@@ -26,7 +26,7 @@ export type SideEffect =
   | PopEffect
   | RepeatEffect
   | ComposeEffect
-  ;
+  | MicroTaskEffect;
 
 export { apiCall } from './api-call';
 export { compose } from './compose';
@@ -35,3 +35,4 @@ export { pushLine } from './push-line';
 export { pushStack } from './push-stack';
 export { repeat } from './repeat';
 export { task } from './task';
+export { microTask } from './microtask';

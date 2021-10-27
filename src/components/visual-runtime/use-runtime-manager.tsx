@@ -1,9 +1,9 @@
 import {
-  ApiCallEffect,
+  ApiCallEffect, MicroTaskEffect,
   SideEffect,
   StackFrameEffect,
-  TaskEffect,
-} from './effects';
+  TaskEffect
+} from "./effects";
 import { RuntimeManager } from './interfaces';
 import { useCallback, useMemo, useState } from 'react';
 import { SideEffectType } from './effects/types';
@@ -25,6 +25,14 @@ export const useRuntimeManager = (): RuntimeManager => {
     () =>
       effects.filter(
         (effect): effect is TaskEffect => effect.type === SideEffectType.TASK,
+      ),
+    [effects],
+  );
+  const microTasks = useMemo(
+    () =>
+      effects.filter(
+        (effect): effect is MicroTaskEffect =>
+          effect.type === SideEffectType.MICROTASK,
       ),
     [effects],
   );
@@ -68,9 +76,10 @@ export const useRuntimeManager = (): RuntimeManager => {
       linePointer,
       stack,
       tasks,
+      microTasks,
       apiCalls,
       ...handlers,
     }),
-    [stack, tasks, apiCalls, linePointer, handlers],
+    [stack, tasks, microTasks, apiCalls, linePointer, handlers],
   );
 };

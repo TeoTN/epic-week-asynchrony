@@ -10,6 +10,6 @@ export { RevertCallback } from './use-dispatch';
 export { invoke } from './use-dispatch';
 export { noop } from './use-dispatch';
 export { StackFrame } from './stack-frame';
-export { ApiCall } from './api-call';
+export { Task } from './task';
 export { Controls } from './Controls';
 export { ControlsProps } from './Controls';

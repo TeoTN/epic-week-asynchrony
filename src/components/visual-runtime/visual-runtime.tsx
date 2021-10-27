@@ -2,19 +2,19 @@ import { ReactElement } from 'react';
 import { withErrorBoundary } from './error-boundary';
 import { SideEffect } from './effects';
 import { Markdown } from '../Markdown';
-import styled, { useTheme } from 'styled-components';
+import styled from 'styled-components';
 import { useRuntimeManager } from './use-runtime-manager';
 import { RuntimeContext } from './runtime-context';
 import { StackFrame } from './stack-frame';
-import { ApiCall } from './api-call';
+import { Task } from './task';
 import { Controls } from './Controls';
 
 interface VisualRuntimeProps {
   playbook: SideEffect[];
   snippet: string;
-  showCallStack?: boolean;
   showApiCalls?: boolean;
   showTasks?: boolean;
+  showMicroTasks?: boolean;
 }
 
 const RuntimeBox = styled.div`
@@ -65,7 +65,7 @@ const FeatureTitle = styled.span`
   font-weight: 500;
 `;
 
-const Toolbelt = styled.div`
+const Toolbox = styled.div`
   margin: 0 2.5rem;
 `;
 
@@ -76,14 +76,19 @@ const FloatingControls = styled.div`
   transform: translateX(-50%);
 `;
 
+const EditorArea = styled.div`
+  position: relative;
+  flex: 1 0 65%;
+`;
+
 export const VisualRuntime = withErrorBoundary({ scope: 'visual-runtime' })(
-  ({ playbook, snippet }: VisualRuntimeProps): ReactElement => {
+  ({ playbook, snippet, showApiCalls, showTasks, showMicroTasks }: VisualRuntimeProps): ReactElement => {
     const manager = useRuntimeManager();
 
     return (
       <RuntimeContext.Provider value={manager}>
         <RuntimeBox>
-          <div style={{ position: 'relative' }}>
+          <EditorArea>
             <Markdown
               highlighterProps={{
                 showLineNumbers: true,
@@ -104,7 +109,7 @@ export const VisualRuntime = withErrorBoundary({ scope: 'visual-runtime' })(
             <FloatingControls>
               <Controls playbook={playbook} />
             </FloatingControls>
-          </div>
+          </EditorArea>
           <CallStackWrapper>
             <FeatureTitle>Call stack</FeatureTitle>
             <div className="body">
@@ -114,20 +119,26 @@ export const VisualRuntime = withErrorBoundary({ scope: 'visual-runtime' })(
             </div>
           </CallStackWrapper>
         </RuntimeBox>
-        <Toolbelt>
-          <Queue>
+        <Toolbox>
+          {showTasks && (<Queue>
             <FeatureTitle>Task queue</FeatureTitle>
             {manager.tasks.map((task, i) => (
-              <ApiCall key={i} {...task} />
+              <Task key={i} {...task} />
             ))}
-          </Queue>
-          <Queue>
+          </Queue>)}
+          {showApiCalls && <Queue>
             <FeatureTitle>API</FeatureTitle>
             {manager.apiCalls.map((task, i) => (
-              <ApiCall key={i} {...task} />
+              <Task key={i} {...task} />
             ))}
-          </Queue>
-        </Toolbelt>
+          </Queue>}
+          {showMicroTasks && <Queue>
+            <FeatureTitle>Microtasks queue</FeatureTitle>
+            {manager.microTasks.map((task, i) => (
+              <Task key={i} {...task} />
+            ))}
+          </Queue>}
+        </Toolbox>
       </RuntimeContext.Provider>
     );
   },

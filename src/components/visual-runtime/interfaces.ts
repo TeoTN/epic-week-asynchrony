@@ -1,14 +1,15 @@
 import {
-  ApiCallEffect,
+  ApiCallEffect, MicroTaskEffect,
   SideEffect,
   StackFrameEffect,
-  TaskEffect,
-} from './effects';
+  TaskEffect
+} from "./effects";
 
 export interface RuntimeManager {
   linePointer: number;
   stack: StackFrameEffect[];
   tasks: TaskEffect[];
+  microTasks: MicroTaskEffect[];
   apiCalls: ApiCallEffect[];
   pushEffect: (effect: SideEffect) => void;
   revertEffect: (effect: SideEffect) => void;

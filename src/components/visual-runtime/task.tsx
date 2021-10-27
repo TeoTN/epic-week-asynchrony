@@ -1,4 +1,4 @@
-import { ApiCallEffect, TaskEffect } from './effects';
+import { ApiCallEffect, MicroTaskEffect, TaskEffect } from "./effects";
 import { useCallback, useRef } from 'react';
 import { useBoundingClientRect } from './useBoundingClientRect';
 import { useDispatch } from './use-dispatch';
@@ -9,11 +9,11 @@ const Box = styled(motion.div)`
   font-size: ${({ theme }) => theme.fonts.size.code};
 `;
 
-export const ApiCall = ({
+export const Task = ({
   name,
   animateFrom = { x: 0, y: 0 },
   sideEffects,
-}: ApiCallEffect | TaskEffect) => {
+}: ApiCallEffect | TaskEffect | MicroTaskEffect) => {
   const ref = useRef<HTMLDivElement | null>(null);
   const domRect = useBoundingClientRect(ref);
   const dispatch = useDispatch();

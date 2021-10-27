@@ -13,6 +13,7 @@ export enum SideEffectType {
   POP_EFFECT = 'POP_EFFECT',
   REPEAT = 'REPEAT',
   COMPOSE = 'COMPOSE',
+  MICROTASK = 'MICROTASK',
 }
 
 export interface BaseSideEffect {
