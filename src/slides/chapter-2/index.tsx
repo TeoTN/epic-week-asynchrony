@@ -3,14 +3,16 @@ import { AsyncAPI } from './AsyncAPI';
 import { Callbacks } from './callbacks';
 import { Promises } from './promises';
 import { AsyncAwait } from './async-await';
+import { Pyramid } from './Pyramid';
 
-export const Step2 = () => (
+export const Chapter2 = () => (
   <Slide>
     <SectionTitleSlide
       title="Asynchronous APIs"
       subtitle="APIs that help writing asynchronous code"
     />
     <AsyncAPI />
+    <Pyramid />
     <Callbacks />
     <Promises />
     <AsyncAwait />

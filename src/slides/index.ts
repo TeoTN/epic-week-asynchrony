@@ -1,3 +1,2 @@
-export * from './step-1';
-export * from './step-2';
 export * from './chapter-1';
+export * from './chapter-2';

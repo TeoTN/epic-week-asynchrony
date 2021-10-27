@@ -1,5 +1,5 @@
 import { SlidesDeck, TitlePage } from './components';
-import { Chapter1, Step1, Step2 } from './slides';
+import { Chapter1, Chapter2 } from "./slides";
 import { ThemeProvider } from 'styled-components';
 import { theme } from './theme';
 
@@ -14,8 +14,7 @@ export const App = () => {
             author="Piotr Staniów"
           />
           <Chapter1 />
-          <Step1 />
-          <Step2 />
+          <Chapter2 />
         </SlidesDeck>
       </div>
     </ThemeProvider>
