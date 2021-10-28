@@ -128,7 +128,7 @@ export const VisualRuntime = withErrorBoundary({ scope: 'visual-runtime' })(
             ))}
           </Queue>)}
           {showApiCalls && <Queue>
-            <FeatureTitle>API</FeatureTitle>
+            <FeatureTitle>Runtime API</FeatureTitle>
             {manager.apiCalls.map((task, i) => (
               <Task key={i} {...task} />
             ))}

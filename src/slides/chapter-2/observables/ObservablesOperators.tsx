@@ -24,8 +24,6 @@ if user is typing fast, values are only taken every one hundred fifty millisecon
 
 const snippet = `
 ~~~js
-import { fromEvent, from, map, mergeMap, debounce } from 'rxjs';
-
 const results = document.querySelector('pre#results');
 const input = document.querySelector('input');
 

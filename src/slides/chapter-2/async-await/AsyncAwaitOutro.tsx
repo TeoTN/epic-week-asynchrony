@@ -6,6 +6,7 @@ const pros = `
 #### Pros
 * Better performance than promises
 * Solves the callback hell
+* Deferred execution
 `;
 const cons = `
 #### Cons
