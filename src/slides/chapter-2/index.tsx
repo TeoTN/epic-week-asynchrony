@@ -5,6 +5,7 @@ import { Promises } from './promises';
 import { AsyncAwait } from './async-await';
 import { Pyramid } from './Pyramid';
 import { Thunks } from './thunks';
+import { Generators } from './generators';
 
 export const Chapter2 = () => (
   <Slide>
@@ -18,5 +19,6 @@ export const Chapter2 = () => (
     <Promises />
     <Thunks />
     <AsyncAwait />
+    <Generators />
   </Slide>
 );
