@@ -29,6 +29,7 @@ export const useDispatch = (): Dispatcher => {
       case SideEffectType.STACK_FRAME:
       case SideEffectType.API_CALL:
       case SideEffectType.TASK:
+      case SideEffectType.MICROTASK:
         return () => {
           effect.sideEffects?.forEach(console.log);
           effect.sideEffects?.map(getRevertCallback).forEach(invoke);

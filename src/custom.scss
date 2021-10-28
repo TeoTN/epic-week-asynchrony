@@ -39,17 +39,6 @@
   align-items: center;
 }
 
-.two-columns {
-  display: flex;
-  font-size: .8em;
-  & > .left {
-    flex: 1;
-  }
-  & > .right {
-    flex: 1;
-  }
-}
-
 .reveal pre {
   box-shadow: none;
 }

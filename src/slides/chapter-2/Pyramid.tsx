@@ -62,7 +62,7 @@ export const Pyramid = () => (
     <SlideTitle>APIs for handling asynchrony</SlideTitle>
     <div className="r-stack">
       {[1, 2, 3, 4, 5, 6].map((step) => (
-        <Illustration className="fragment">
+        <Illustration className="fragment" key={step}>
           <img src={pyramid} alt="Pyramid of features per API" />
           <Pointer src={jump} alt="pointer" step={step} />
         </Illustration>

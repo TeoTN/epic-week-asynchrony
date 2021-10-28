@@ -88,7 +88,15 @@ a call of environment's API which will independently print out the arguments
 passed to it **NEXT**
 * Finally the interpreter has reached the end of the snippet **NEXT**
 * And this is the moment when the stack has been completely emptied.
-This is a moment, where microtasks can be executed. **NEXT SLIDE**
+This is a moment, where microtasks can be executed. 
+
+So this is basically what the call stack is and how it works. As you can see,
+there's nothing neither in the call stack nor the engine that would enable
+asynchrony, as the engine is single-threaded, runs a single snippet of code at
+a time, no parallelism is allowed.
+
+The part of the runtime environment that actually enables asynchrony is the 
+event loop. **NEXT SLIDE**
 `;
 
 export const CallStack = () => (

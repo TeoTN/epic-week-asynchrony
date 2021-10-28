@@ -56,6 +56,7 @@ const Queue = styled.div.attrs({ className: 'queue' })`
   margin: 0.75rem 0;
   padding: 1rem;
   border-radius: 0.3rem;
+  gap: 1rem;
 `;
 
 const FeatureTitle = styled.span`

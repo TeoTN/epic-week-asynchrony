@@ -5,7 +5,7 @@ export const SlideTitle = ({
   children,
 }: PropsWithChildren<{ subtitle?: string }>): ReactElement => (
   <>
-    <h3 data-id="title">{children}</h3>
+    <h3 data-id="slide-title">{children}</h3>
     {subtitle && <h6 data-id="subtitle">{subtitle}</h6>}
   </>
 );

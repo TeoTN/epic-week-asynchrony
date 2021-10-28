@@ -7,6 +7,7 @@ import styled from 'styled-components';
 
 const Box = styled(motion.div)`
   font-size: ${({ theme }) => theme.fonts.size.code};
+  white-space: nowrap;
 `;
 
 export const Task = ({

@@ -80,7 +80,6 @@ a compiler and interpreter. But what is crucial here is two bits. It has
 execution context and **NEXT**
 * Heap memory - which is a mechanism for allocating memory for all the bits
 and bobs our code creates. 
-
 `;
 
 export const JSEngine = () => (

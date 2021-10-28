@@ -56,14 +56,19 @@ const notes = `
 Before we jump straight into using asynchrony in JavaScript, let's talk
 a little bit about some terms that we'll use in this talk, and what they
 mean. Code written in JavaScript language is usually executed in so
-called _runtime environment_. **NEXT** The runtime environment may refer
+called _runtime environment_. **NEXT**
+ 
+The runtime environment may refer
 to a web browser like Google Chrome, Microsoft Edge or Firefox, but it
 can also refer to Node.js. The runtime environment usually comprises a
-JavaScript engine **NEXT**, an event loop, task queue, and some APIs
+JavaScript engine **NEXT**,
+ 
+an event loop, task queue, and some APIs
 like DOM API, or I/O APIs in the case of Node.js. One notable example of
 JavaScript engine is V8 - developed by Google for its Chrome browser,
 later adopted and used in Node.js and Edge. JavaScript code is run by
 single-threaded engine, that consists only of a call stack and a heap.
+**NEXT**
 `;
 
 export const JSEnv = () => (
