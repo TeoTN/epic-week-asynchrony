@@ -6,6 +6,7 @@ import { AsyncAwait } from './async-await';
 import { Pyramid } from './Pyramid';
 import { Thunks } from './thunks';
 import { Generators } from './generators';
+import { Observables } from './observables';
 
 export const Chapter2 = () => (
   <Slide>
@@ -20,5 +21,6 @@ export const Chapter2 = () => (
     <Thunks />
     <AsyncAwait />
     <Generators />
+    <Observables />
   </Slide>
 );
