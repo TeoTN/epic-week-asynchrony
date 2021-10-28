@@ -4,6 +4,7 @@ import { Callbacks } from './callbacks';
 import { Promises } from './promises';
 import { AsyncAwait } from './async-await';
 import { Pyramid } from './Pyramid';
+import { Thunks } from './thunks';
 
 export const Chapter2 = () => (
   <Slide>
@@ -15,6 +16,7 @@ export const Chapter2 = () => (
     <Pyramid />
     <Callbacks />
     <Promises />
+    <Thunks />
     <AsyncAwait />
   </Slide>
 );

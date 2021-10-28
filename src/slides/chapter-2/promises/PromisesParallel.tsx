@@ -6,28 +6,55 @@ import restaurant from '../../../assets/burgersland.png';
 import fryingPan from '../../../assets/frying-pan.png';
 import fire from '../../../assets/fire.png';
 import { Slide, SlideTitle } from '../../../components';
-import { PropsWithChildren } from 'react';
+import React, { HTMLAttributes, PropsWithChildren } from 'react';
 import { Notes } from '../../../components/Notes';
+import styled from 'styled-components';
 
-const Circle = ({
-  children,
-  index,
-  placeholder,
-}: PropsWithChildren<{ index: number; placeholder?: boolean }>) => (
-  <div
-    className={`circle fragment ${placeholder ? 'placeholder' : ''}`}
-    data-fragment-index={index}
-  >
-    {children}
-  </div>
-);
+interface CircleProps {
+  index: number;
+  placeholder?: boolean;
+}
 
-const Timeline = ({ children }: PropsWithChildren<{}>) => (
-  <div className="promise-timeline">
-    {children}
-    <div className="line" />
-  </div>
-);
+const Circle = styled.div.withConfig({
+  shouldForwardProp: (prop) => !['index', 'placeholder'].includes(prop),
+}).attrs(({ index }: CircleProps): any => ({
+  'data-fragment-index': index,
+  className: 'fragment',
+}))<CircleProps>`
+  position: relative;
+  display: flex;
+  background-color: ${({ theme }) => theme.colors.calypso};
+  border-radius: ${({ placeholder }) => placeholder ? '0' : '64px'};
+  width: 160px;
+  height: ${({ placeholder }) => placeholder ? '16px' : '160px'};
+  align-items: center;
+  justify-content: center;
+  z-index: 900;
+
+  & > img {
+    width: 80%;
+    height: 80%;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    display: block;
+    background-color: ${({ theme }) => theme.colors.calypso};
+    height: 16px;
+    width: 40px;
+    left: -25%;
+  }
+`;
+
+const Timeline = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  margin: 32px 0;
+  align-items: center;
+`;
 
 export const PromisesParallel = () => {
   return (

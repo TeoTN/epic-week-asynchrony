@@ -21,13 +21,19 @@ const promise = new Promise(
 ~~~
 `;
 
+const notes = `
+As promises still rely on callbacks, it is still possible to create the same
+issue as we saw previously. In the example on the screen, we can again see the
+callback hell. It is somewhat easier to avoid this problem with promises, but
+it's still possible, and this data structure doesn't solve the problem.
+`;
 
 export const PromisesAntipatterns = () => (
   <Slide>
-    <SlideTitle subtitle="Antipatterns">Promises</SlideTitle>
+    <SlideTitle subtitle="Callback hell">Promises</SlideTitle>
     <Markdown>{snippet1}</Markdown>
     <Notes>
-      * It's still possible to create callback hell
+      <Markdown>{notes}</Markdown>
     </Notes>
   </Slide>
 );
