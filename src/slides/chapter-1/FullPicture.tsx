@@ -88,7 +88,7 @@ const playbook: SideEffect[] = [
   popStack('global-log'),
   popStack('main'),
   compose(
-    pushStack('callback1', { ln: -1, args: [], handler: 'callback1' }),
+    pushStack('callback1', { ln: 11, args: [], handler: 'callback1' }),
     popStack('task-1'),
     pushLine(2),
   ),
@@ -97,7 +97,7 @@ const playbook: SideEffect[] = [
   compose(pushLine(), popStack('log-1')),
   compose(popStack('callback1'), pushLine(0)),
   compose(
-    pushStack('callback2', { ln: -1, args: [], handler: 'callback2' }),
+    pushStack('callback2', { ln: 12, args: [], handler: 'callback2' }),
     popStack('task-2'),
     pushLine(6),
   ),

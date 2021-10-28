@@ -62,6 +62,7 @@ export const useDispatch = (): Dispatcher => {
         case SideEffectType.STACK_FRAME:
         case SideEffectType.API_CALL:
         case SideEffectType.TASK:
+        case SideEffectType.MICROTASK:
           manager.pushEffect(effect);
           return onRevert;
         case SideEffectType.PUSH_LINE:
