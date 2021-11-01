@@ -10,7 +10,6 @@ function* withInput() {
   } catch (e) {
     console.error(e);
   }
-  console.log(input);
 }
 
 const iterator = withInput();
