@@ -18,6 +18,7 @@ const Pointer = styled.img<PointerProps>`
   left: 60%;
   width: 80px;
   height: 80px;
+  filter: hue-rotate(132deg) saturate(25000%);
 `;
 
 const notes = `

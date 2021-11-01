@@ -1,3 +1,3 @@
-import { SectionTitleSlide, Slide, SlideTitle } from '../../../components';
+import { SectionTitleSlide } from '../../../components';
 
-export const CallbacksIntro = () => <SectionTitleSlide title="callbacks" />;
+export const CallbacksIntro = () => <SectionTitleSlide title="Callbacks" />;
