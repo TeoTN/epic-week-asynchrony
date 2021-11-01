@@ -1,16 +1,19 @@
 import { Markdown, Slide, SlideTitle } from '../../../components';
 import { Notes } from '../../../components/Notes';
+import { TwoColumns } from '../../../components/TwoColumns';
 
 const snippet = `
 ~~~js
 setTimeout(() => {
-  Promise.resolve().then(() => console.log('Microtask 1'));
-  console.log('Listener 1');
+  Promise.resolve()
+    .then(() => console.log('Promise 1'));
+  console.log('Timeout 1');
 }, 1000);
 
 setTimeout(() => {
-  Promise.resolve().then(() => console.log('Microtask 2'));
-  console.log('Listener 2');
+  Promise.resolve()
+    .then(() => console.log('Promise 2'));
+  console.log('Timeout 2');
 }, 1000);
 ~~~
 `;
@@ -29,10 +32,20 @@ the call stack gets emptied. On the other hand, the task queue is only pulled
 from once in every event loop run.
 `;
 
+const quiz = (
+  <ol>
+    <li>Timeout 1, Timeout 2, Promise 1, Promise 2</li>
+    <li>Promise 1, Promise 2, Timeout 1, Timeout 2</li>
+    <li>Timeout 1, Promise 1, Timeout 2, Promise 2</li>
+    <li>Promise 1, Timeout 1, Promise 2, Timeout 2</li>
+  </ol>
+)
+
 export const PromisesMicroTasks = () => (
   <Slide>
     <SlideTitle subtitle="Microtasks">Promises</SlideTitle>
-    <Markdown>{snippet}</Markdown>
+    <TwoColumns left={<Markdown>{snippet}</Markdown>} right={quiz} />
+
     <Notes>
       <Markdown>{notes}</Markdown>
     </Notes>

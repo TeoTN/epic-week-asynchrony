@@ -9,7 +9,7 @@ export const App = () => {
       <div className="reveal">
         <SlidesDeck>
           <TitlePage
-            title="Asynchrony"
+            title="Asynchrony in JS"
             subtitle="Between now and then"
             author="Piotr Staniów"
           />
