@@ -1,12 +1,17 @@
-import { PropsWithChildren, ReactElement } from 'react';
+import { ElementType, PropsWithChildren, ReactElement } from 'react';
+
+interface Props {
+  subtitle?: string;
+  component?: ElementType;
+}
 
 export const SlideTitle = ({
   subtitle,
   children,
-}: PropsWithChildren<{ subtitle?: string }>): ReactElement => (
+  component: Component = 'h3',
+}: PropsWithChildren<Props>): ReactElement => (
   <>
-    <h3 data-id="slide-title">{children}</h3>
+    <Component data-id="slide-title">{children}</Component>
     {subtitle && <h6 data-id="subtitle">{subtitle}</h6>}
   </>
 );
-

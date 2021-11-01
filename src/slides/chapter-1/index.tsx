@@ -6,7 +6,7 @@ import { AsynchronyDefinition } from './AsynchronyDefinition';
 import { EventLoop } from './EventLoop';
 import { FullPicture } from './FullPicture';
 
-const notes = ``;
+const notes = `**NEXT**`;
 
 export const Chapter1 = () => (
   <Slide>

@@ -62,7 +62,7 @@ const Title = styled.h5`
 `;
 
 const notes = `
-What might be surprising for some of you, JavaScript engine is **NEXT**
+What might seem to be surprising the JavaScript engine is **NEXT**
 
 * Single-threaded - meaning that at any time the code is run top to the
 bottom and nothing might be run in parallel. So it may appear, there's no room
