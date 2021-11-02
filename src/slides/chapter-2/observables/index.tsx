@@ -1,13 +1,13 @@
 import { ObservablesIntro } from './ObservablesIntro';
 import { ObservablesConstructor } from './ObservablesConstructor';
 import { ObservablesOperators } from './ObservablesOperators';
-import { ObservablesTesting } from './ObservablesTesting';
+import { ObservablesMarbles } from './ObservablesMarbles';
 
 export const Observables = () => (
   <>
     <ObservablesIntro />
     <ObservablesConstructor />
     <ObservablesOperators />
-    <ObservablesTesting />
+    <ObservablesMarbles />
   </>
 );

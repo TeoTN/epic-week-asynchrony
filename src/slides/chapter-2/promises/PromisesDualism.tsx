@@ -29,10 +29,15 @@ the same coin - the Promise constructor is used to wrap some asynchronous action
 like a call to another API, or handling of an event, and the wrapper immediately
 calls the function we passed to the constructor. 
 
+It's worth noting here that promises are always asynchronous, even if they are
+immediately resolved, so even if the example to the left didn't use setTimeout
+it'd still be asynchronous.
+
 On the other hand, there's the API that we use when dealing a promise that was
 already created. It is far more frequent to use the API to the right, since 
 usually the promise was already created either by runtime environment's API or
 by a library.
+
 `;
 
 export const PromisesDualism = () => (

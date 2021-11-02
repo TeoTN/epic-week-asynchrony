@@ -14,8 +14,8 @@ function* simpleCounter() {
 const iterator = simpleCounter();
 
 console.log(iterator.next()); // START; {value: 1, done: false}
-console.log(iterator.next()); // {value: 2, done: false}
-console.log(iterator.next()); // {value: 3, done: false}
+console.log(iterator.next()); // Returned: {value: 2, done: false}
+console.log(iterator.next()); // Returned: {value: 3, done: false}
 ~~~
 `;
 

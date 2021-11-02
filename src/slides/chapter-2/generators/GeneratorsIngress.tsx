@@ -14,7 +14,9 @@ const iterator = withInput();
 iterator.next();
 // { value: 5, done: false }
 iterator.next();
-// undefined - console.log
+// console.log: undefined
+// { value: undefined, done: true }
+iterator.next();
 // { value: undefined, done: true }
 ~~~
 `;
@@ -30,7 +32,9 @@ const iterator = withInput();
 iterator.next();
 // { value: 5, done: false }
 iterator.next(10);
-// 10 - console.log
+// console.log: 10
+// { value: undefined, done: true }
+iterator.next();
 // { value: undefined, done: true }
 ~~~
 `;

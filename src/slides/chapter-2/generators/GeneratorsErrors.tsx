@@ -6,18 +6,17 @@ const snippet = `
 ~~~js
 function* withInput() {
   try {
-    const input = yield;
-  } catch (e) {
-    console.error(e);
+    const response = yield;
+  } catch (error) {
+    logger.error(error);
   }
 }
 
 const iterator = withInput();
 iterator.next();
 
-fetch('/url-1')
-  .catch(() => iterator.throw(new Error));
-
+const error = new ResponseError('Failed to get response');
+iterator.throw(error);
 ~~~
 `;
 

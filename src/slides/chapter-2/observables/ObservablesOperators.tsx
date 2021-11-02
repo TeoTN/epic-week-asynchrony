@@ -27,9 +27,9 @@ const snippet = `
 const results = document.querySelector('pre#results');
 const input = document.querySelector('input');
 
-const btnClicks$ = fromEvent(btn, 'change');
+const inputTyping$ = fromEvent(input, 'change');
 
-btnClicks$
+inputTyping$
   .pipe(
     debounce(150),
     map((event) => event.target.value),
