@@ -15,7 +15,11 @@ http.request('/api/endpoint', cb2);
 console.log(a); 
 `;
 
-const notes = ``;
+const notes = `
+[Poll](https://app.sli.do/event/xykxgzgh)
+[Admin](https://admin.sli.do/event/xykxgzgh/polls) 
+[Live](https://wall.sli.do/event/xykxgzgh?section=57547dc8-3de1-4bc7-ac46-17e5ea79c5b2)
+`;
 
 export const CallbacksQuiz = () => (
   <Slide>
